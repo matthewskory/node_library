@@ -1,0 +1,20 @@
+//fs notes
+
+var fs = require('fs');
+
+//deleting and removing ------------------------------------------------
+fs.unlink('<file name>') 							//deletes the file specified
+fs.rmdir('<directory name>')						//can only delete an empty directory
+
+
+//creating new stuff ---------------------------------------------------
+//sync
+fs.mkdirSync('<directory name>')					//creates a new directory named accordingly
+
+//async
+fs.mkdir('<directory name>', function(){						//creates a new directory
+	fs.readFile('<file name>', utf8, function(err, data){		//reads a given file name and encodes data as uft8
+		fs.writeFile('<new file name>', data);					//writes a new file named accordingly with the data from the original file		
+	});
+});
+

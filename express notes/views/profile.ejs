@@ -1,0 +1,17 @@
+
+/*include partial views using the include and path of the file to be included*/
+<%include partials/nav.ejs%>
+<p>
+
+<h1> Welcome to the profile of <%=person%> </h1>
+<h2>Age: <%=data.age%> </h2>
+<h2>Job: <%=data.job%> </h2>
+<h2>Hobbies:</h2>
+	<ul> 
+		<% data.hobbies.forEach(function(item){%>
+			<li> <%=item%></li>
+
+		<%});%>
+	
+	</ul>
+</p>
